@@ -89,10 +89,10 @@ table{
   text-align:center;
   width: 80%;
   height: 280px;
-  border-spacing: 3px;
+  border-spacing: 5px;
   background:#7B68EE;
   color: #151715;
-  border: 3px solid #ece9e0;
+  border: 5px solid #ece9e0;
   border-radius: 5px;
   margin: auto;
 }
