@@ -89,10 +89,10 @@ table{
   text-align:center;
   width: 80%;
   height: 280px;
-  border-spacing: 4px;
+  border-spacing: 3px;
   background:#7B68EE;
   color: #151715;
-  border: 5px solid #ece9e0;
+  border: 3px solid #ece9e0;
   border-radius: 5px;
   margin: auto;
 
@@ -169,4 +169,5 @@ tr.two td{
     margin-top: 20px;
     padding: 10px;
     max-width: 960px;
+    overflow-x: auto;
   }
