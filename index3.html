@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="style3.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание №3</title>
+  </head>
+  <body>
+    <!--Шапка-->
+    <header>
+      <img
+        class="pi"
+        style="float: left; margin: 10px; width: 100px; height: 100px"
+        src="https://s.rbk.ru/v1_companies_s3/resized/550xH/media/trademarks/7f4b9c29-3bbb-45b1-86db-9a75e896359d.jpg"
+        alt="Логотип"
+      />
+      <div id="hat">Домашнее задание №3</div>
+    </header>
+    <nav>
+      <ul class="all_ul">
+        <li class="all_li">
+          <a class="all_a" href="#">Меню &lrtri;</a>
+          <ul>
+            <li><a class="all_a" href="#link">Ссылки</a></li>
+            <li><a class="all_a" href="#table">Таблица</a></li>
+            <li><a class="all_a" href="#form">Форма </a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="main">
+      <!--Ссылки-->
+      <div id="all_link">
+        <div class="block">
+          <fieldset>
+            <legend><h3 id="link">Ссылки:</h3></legend>
+
+            <ul>
+              <li><a id="kub" href="http://kubsu.ru/">ссылка 1</a></li>
+              <li><a href="https://kubsu.ru/">ссылка 2</a></li>
+              <li>
+                <a href="https://ru.wikipedia.org/?l=">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pi-symbol.svg/195px-Pi-symbol.svg.png"
+                    alt="ссылка 3"
+                    style="width: 100px"
+                  />
+                </a>
+              </li>
+              <li><a href="number4.html">ссылка 4</a></li>
+              <li><a href="index.html">ссылка 5</a></li>
+              <li><a href="#kub">ссылка 6</a></li>
+              <li>
+                <a href="http://kubsu.ru?watch=123&listen=4m6&piuh=a3e"
+                  >ссылка 7</a
+                >
+              </li>
+              <li><a href="http://kubsu.ru?id=1234">ссылка 8</a></li>
+              <li><a href="./nomber9.html/">ссылка 9</a></li>
+              <li><a href="./about">ссылка 10</a></li>
+              <li><a href="../folder">ссылка 11</a></li>
+              <li><a href="../../folder2">ссылка 12</a></li>
+              <li>
+                <b>
+                  Федеральное государственное бюджетное образовательное
+                  учреждение высшего образования
+                  <a href="https://kubsu.ru/">ссылка 13</a> «Кубанский
+                  государственный университет»
+                </b>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/OpenStack#Compute_(Nova)"
+                  >ссылка 14
+                </a>
+              </li>
+              <li>
+                ссылка 15
+                <img
+                  src="https://paintingandframe.com/uploadpic/diana_ong/big/composition_with_circle_and_square.jpg"
+                  alt="circle&square"
+                  width="350"
+                  height="450"
+                  usemap="#circle_and_square"
+                />
+                <map name="circle_and_square">
+                  <!-- Зеленный квадрат -->
+                  <area
+                    shape="rect"
+                    coords="180,270,260,355"
+                    href="https://kubsu.ru"
+                    alt="link1"
+                  />
+                  <!-- Фиолетовый круг -->
+                  <area
+                    shape="circle"
+                    coords="180,95,50"
+                    href="https://kubsu.ru"
+                    alt="link2"
+                  />
+                </map>
+              </li>
+              <li><a href="">ссылка 16</a></li>
+              <li><a>ссылка 17</a></li>
+              <li><a href="https://kubsu.ru" rel="nofollow">ссылка 18</a></li>
+              <li>
+                <!-- <noindex> -->
+                <a href="https://kubsu.ru">ссылка 19</a>
+                <!-- </noindex> -->
+              </li>
+              <li>
+                (20) Нумерованный список:
+                <ol>
+                  <li><a href="https://kubsu.ru/">title 1</a></li>
+                  <li><a href="https://www.google.ru/">title 2</a></li>
+                  <li><a href="https://ya.ru/">title 3</a></li>
+                  <li><a href="https://www.opera.com/ru">title 4</a></li>
+                </ol>
+              </li>
+              <li>
+                <a
+                  href="ftp://username:password@serv.example.com:21/folder/file.pdf"
+                  >ссылка 21
+                </a>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+      </div>
+
+      <!--Таблица-->
+      <div id="tabl">
+        <div class="block">
+          <fieldset>
+            <table>
+              <caption>
+                <h3>Заголовок таблицы</h3>
+              </caption>
+
+              <tr>
+                <th>Заголовок 1</th>
+                <th>Заголовок 2</th>
+                <th>Заголовок 3</th>
+                <th>Заголовок 4</th>
+                <th>Заголовок 5</th>
+              </tr>
+
+              <tr>
+                <td colspan="2">11</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+              </tr>
+
+              <tr class="two">
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+              </tr>
+
+              <tr>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+                <td>35</td>
+              </tr>
+
+              <tr class="four">
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+                <td>44</td>
+                <td>45</td>
+              </tr>
+
+              <tr>
+                <td>51</td>
+                <td>52</td>
+                <td>53</td>
+                <td>54</td>
+                <td id="cell55" rowspan="2">55</td>
+              </tr>
+
+              <tr class="six">
+                <td>61</td>
+                <td>62</td>
+                <td>63</td>
+                <td>64</td>
+              </tr>
+            </table>
+          </fieldset>
+        </div>
+      </div>
+
+      <!--Форма-->
+      <div id="forma">
+        <div class="block">
+          <fieldset>
+            <legend id="form"><h3>Форма</h3></legend>
+            <p>
+              <label>
+                ФИО<br />
+                <input
+                  name="name"
+                  size="30"
+                  placeholder="Введите ФИО"
+                  value="Соболивская Алёна Андреевна"
+                />
+              </label>
+            </p>
+
+            <p>
+              <label>
+                Tелефон<br />
+                <input
+                  type="tel"
+                  name="number"
+                  size="30"
+                  list="tel-list"
+                  placeholder="+7 (918) 123-45-67"
+                  pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                />
+                <datalist id="tel-list">
+                  <option value="+7 (918) 087-12-34" label="Номер №1"></option>
+                  <option value="+7 (993) 308-71-23" label="Номер №2"></option>
+                </datalist>
+              </label>
+            </p>
+
+            <p>
+              <label>
+                Email<br />
+                <input
+                  name="email"
+                  type="email"
+                  size="30"
+                  value="sobolivsckaya.alena@yandex.ru"
+                  placeholder="Введите почту"
+                />
+              </label>
+            </p>
+
+            <p>
+              <label>
+                Дата рождения<br />
+                <input name="date" value="2003-12-24" type="date" />
+              </label>
+            </p>
+
+            <p>
+              Пол<br />
+              <label>
+                <input type="radio" name="radio-group-1" value="Значение1" />М
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  checked="checked"
+                  name="radio-group-1"
+                  value="Значение2"
+                />Ж
+              </label>
+            </p>
+
+            <p>
+              <label>
+                Любимый язык программирования<br />
+                <select name="language1" multiple="multiple">
+                  <option value="Значение1" selected="selected">Pascal</option>
+                  <option value="Значение2" selected="selected">C</option>
+                  <option value="Значение3" selected="selected">C++</option>
+                  <option value="Значение2" selected="selected">
+                    JavaScript
+                  </option>
+                  <option value="Значение3" selected="selected">PHP</option>
+                  <option value="Значение2">Python</option>
+                  <option value="Значение3" selected="selected">Java</option>
+                  <option value="Значение2" selected="selected">Haskel</option>
+                  <option value="Значение3" selected="selected">Clojure</option>
+                  <option value="Значение3" selected="selected">Scala</option>
+                </select>
+              </label>
+            </p>
+
+            <p>
+              <label>
+                Биография<br />
+                <textarea
+                  rows="4"
+                  cols="40"
+                  name="biography"
+                  placeholder="Расскажите о себе"
+                >
+                </textarea>
+              </label>
+            </p>
+
+            <p>
+              <label>
+                <input type="checkbox" checked="checked" name="check_mark" />
+                С контрактом ознакомлен(а)
+              </label>
+            </p>
+
+            <p><input type="submit" value="Сохранить" /></p>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <span> (c) Соболивская Алёна </span>
+    </div>
+  </body>
+</html>
