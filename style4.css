@@ -67,12 +67,14 @@ body{
 
 h1{
   font-size:calc(15px + 25 * (100vw / 1280)) !important;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
 h3{
     color: #52339a !important;
     font-size:calc(15px + 10 *(100vw / 1280)) !important;
+    
   }
 
 
