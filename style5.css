@@ -1,0 +1,69 @@
+.link{
+  display: block;
+  border:none;
+}
+
+.circle_text{
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  word-spacing: 24px;
+  animation: motion normal infinite 20s linear;
+  transform-origin: 50% 50%;
+}
+
+.circle:hover .circle_text{
+  animation-play-state:paused;
+}
+
+@keyframes motion{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  background-color: #BBBBFF;
+  width: 100%;
+  max-width: 880px;
+  border: #52339a;
+  
+}
+
+.form_select, .form_input{
+  border:2px solid #52339a ;
+  background-color: rgb(247, 239, 227);
+}
+
+.form_select{
+  width: 100%;
+  max-width: 340px;
+  height: 40px;
+}
+
+.form_input{
+  width: 100%;
+  max-width: 40px;
+  height: 40px;
+  text-align:center;
+}
+
+button{
+  cursor:pointer;
+  background-color:#BBBBFF; 
+}
+
+
+button:hover{
+  transition: 0.7s;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: calc(15px + 10 * (100vw / 1280));
+  color:#2B2024;
+}
