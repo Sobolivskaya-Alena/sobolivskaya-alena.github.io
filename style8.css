@@ -1,0 +1,181 @@
+body{
+    height: 100%;
+    line-height: 1;
+    font-size: 20px;
+    background-color: rgb(151, 165, 243);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+.form{
+    max-width: 450px;
+    margin: 0px auto;
+    padding: 30px;
+    
+}
+
+.form_body{
+   position: relative;
+}
+.form_body::after{
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(51, 51, 51, 0.9)url(https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif) center/50px no-repeat;
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.5s ease 0s;
+}
+.form_body._sending::after{
+   opacity: 1;
+   visibility: visible;
+}
+
+.form_title{
+   text-align: center;
+}
+
+.form_input{
+    height: 50px;
+    border-radius: 5px;
+    width: 400px;
+}
+
+textarea.form_input{
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+.checkbox_input{
+   display: none;
+}
+.checkbox_input:checked + .checkbox_label::after{
+   transform: scale(1);
+}
+.checkbox_label{
+   font-size: 16px;
+   line-height: 140%;
+   display: inline-flex;
+   align-items: center;
+   position: relative;
+   cursor: pointer;
+}
+.checkbox_label::before{
+   content: "";
+   align-self: flex-start;
+   flex: 0 0 24px;
+   height: 24px;
+   background-color: #fff;
+   border-radius: 4px;
+   margin: 0px 10px 0px 0px;
+}
+.checkbox_label::after{
+   transition: transform 0.5s ease 0s ;
+   content: "";
+   width: 16px;
+   height: 16px;
+   position: absolute;
+   top: 4px;
+   left:  4px;
+   background-color: rgba(122, 77, 167, 0.975);
+   border-radius: 4px;
+   transform: scale(0);
+}
+
+
+.form_button{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 60px;
+   background-color:rgba(122, 77, 167, 0.975) ;
+   color: #fff;
+   font-size: 18px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-weight: 700;
+   cursor: pointer;
+   border-radius: 20px;
+   box-shadow: 0 5px 0 #0b0b0b;
+   transition: background-color 0.5s ease 0s;
+   position: relative;
+   top: 0;
+}
+.form_button:hover{
+   background-color: rgb(61, 71, 124); 
+}
+.form_button:active{
+   top: 3px;
+   box-shadow: 0 2px 0 #0b0b0b;
+}
+
+
+.form *{
+   outline: none;
+}
+.form_input:focus{
+   box-shadow: 0 0 15px rgb(61, 71, 124);
+}
+
+
+.form_input._error .checkbox_label::before{
+   box-shadow:0 0 15px #540e0e;
+}
+
+
+ select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #ffffff;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:#0b0b0b;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: .25em;
+ }
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: rgba(122, 77, 167, 0.975);
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+ .select:hover::after {
+    color: rgb(113, 128, 208);
+ }
+  
+  

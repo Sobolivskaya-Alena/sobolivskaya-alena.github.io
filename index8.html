@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание №8</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link href="style8.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="form">
+      <form id="form" class="form_body">
+        <h3 class="form_title">Форма обратной связи</h3>
+
+        <div>
+          <div class="form_item mt-4">
+            <label for="Name" class="form_label">ФИО</label> <br />
+            <input type="text" id="forName" class="form_input _req" required />
+          </div>
+
+          <div class="form_item">
+            <br />
+            <label for="Email" class="form_label">E-mail</label><br />
+            <input
+              type="text"
+              id="forEmail"
+              class="form_input _req _email"
+              required
+            />
+          </div>
+
+          <div class="form_item">
+            <br />
+            <label>
+              Tелефон<br />
+              <input
+                class="form_input"
+                type="tel"
+                list="tel-list"
+                placeholder="+7 (918) 123-45-67"
+                pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+              />
+            </label>
+          </div>
+
+          <div class="select mt-4">
+            <br />
+            <label class="form_label">
+              <select name="format" id="format" class="select">
+                <option selected disabled>Организация</option>
+                <option value="Значение1">Организация №1</option>
+                <option value="Значение2">Организация №2</option>
+                <option value="Значение3">Организация №3</option>
+                <option value="Значение4">Организация №4</option>
+                <option value="Значение5">Организация №5</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form_item mb-3">
+            <br />
+            <label for="Message" class="form_label">Сообщение</label><br />
+            <textarea
+              name="message"
+              id="forMessage"
+              class="form_input"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form_item">
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="check_mark"
+                name="check_mark"
+                class="checkbox_input _req"
+                checked
+              />
+              <label for="check_mark" class="checkbox_label">
+                <span>Согласие на обработку персональных данных.</span>
+              </label>
+            </div>
+          </div>
+
+          <br />
+          <button type="submit" class="form_button">Отправить</button>
+        </div>
+      </form>
+    </div>
+    <script src="script7.js"></script>
+  </body>
+</html>
