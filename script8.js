@@ -33,13 +33,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function formValidator(form){
         let error=0;
-        let formReq=document.querySelectorAll('._req');
+        let formReq=document.querySelectorAll('._req, #tel');
 
         for(let index=0; index<formReq.length; index++){
-            const input = formReq[index];
+            let input = formReq[index];
             formRemoveError(input);
             if(input.classList.contains('_email')){
-                if(emailTest(input)){
+                if(!emailTest(input)){
+                    formAddError(input);
+                    error++;
+                }
+
+            } else if(input.id == "tel"){
+                if(!phoneTest(input)){
                     formAddError(input);
                     error++;
                 }
@@ -68,4 +74,9 @@ document.addEventListener('DOMContentLoaded', function(){
     function emailTest(input){
         return /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(input.value);
     }
+    function phoneTest(input){
+        return /^[\d\+][\d\(\)\ -]{4,14}\d$/.test(input.value);
+    }
 });
+
+
