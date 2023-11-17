@@ -1,3 +1,4 @@
+
 body{
     height: 100%;
     line-height: 1;
@@ -101,18 +102,7 @@ body{
 .form_body{
    position: relative;
 }
-.form_body::after{
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(51, 51, 51, 0.9)url(https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif) center/50px no-repeat;
-   opacity: 0;
-   visibility: hidden;
-   transition: all 0.5s ease 0s;
-}
+
 .form_body._sending::after{
    opacity: 1;
    visibility: visible;
@@ -204,51 +194,53 @@ textarea.form_input{
 }
 
 
-.form_input._error .checkbox_label::before{
+.form_input._error, ._error .checkbox_label::before{
    box-shadow:0 0 15px #540e0e;
 }
-select {
-   
-   -webkit-appearance:none;
-   -moz-appearance:none;
-   -ms-appearance:none;
-   appearance:none;
-   outline:0;
-   box-shadow:none;
-   border:0!important;
-   background: #ffffff;
-   background-image: none;
-   flex: 1;
-   padding: 0 .5em;
-   color:#0b0b0b;
-   cursor:pointer;
-   font-size: 1em;
-   font-family: 'Open Sans', sans-serif;
-}
-select::-ms-expand {
-   display: none;
-}
-.select {
-   position: relative;
-   display: flex;
-   width: 100%;
-   height: 3em;
-   line-height: 3;
-   background: #ffffff;
-   overflow: hidden;
-   border-radius: .25em;
-}
-.select::after {
-   content: '\25BC';
-   position: absolute;
-   top: 0;
-   right: 0;
-   padding: 0 1em;
-   background: rgba(122, 77, 167, 0.975);
-   cursor:pointer;
-   pointer-events:none;
-   transition:.25s all ease;
-}
-.select:hover::after {
-   color: rgb(113, 128, 208);
-}
+
+
+ select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #ffffff;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:#0b0b0b;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3em;
+    line-height: 3;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: .25em;
+ }
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: rgba(122, 77, 167, 0.975);
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+ .select:hover::after {
+    color: rgb(113, 128, 208);
+ }
+  
