@@ -1,82 +1,112 @@
-"use strict";
-document.addEventListener('DOMContentLoaded', function(){
-    const form=document.getElementById('form');
-    form.addEventListener('submit', formSend);
+/*jslint browser: true */
+/*jslint single: true */
+/*jslint unordered: true */
+/*jslint this: true */
+/*global $, jQuery, history, Slapform */
 
-    async function formSend(e){
+function homeURL() {
+    history.pushState({modal: "close"}, "ModalOut", "./index8.html");
+}
+
+//automatic open or close modal
+function modalCh(event) {
+    if (event) {
+        document.querySelector(".main_but").click();
+    } else {
+        document.querySelector(".close").click();
+        homeURL();
+    }
+}
+
+window.onload = function (event) {
+    let stateStatus = event.currentTarget.history.state;
+    modalCh(stateStatus && stateStatus.modal === "open");
+
+    //using history
+    document.querySelector(".main_but").addEventListener("click", function () {
+        history.pushState({modal: "open"}, "ModalIn", "?form=true");
+    });
+
+    let modalPop = document.getElementById("exampleModal");
+    modalPop.addEventListener("click", function (e) {
+        if (e.target === document.getElementById("exampleModal")) {
+            homeURL();
+        }
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.keyCode === 27) {
+            homeURL();
+        }
+    });
+
+    document.querySelector(".close").addEventListener("click", function () {
+        homeURL();
+    });
+
+    //slapform (send data)
+    let slapformMain = document.getElementById("main");
+    slapformMain.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        let error=formValidator(form);
-        let formData=new FormData(form);
-       
-        if(error==0){
-            form.classList.add('_sending');
-            let response = await fetch('sendmail.php',{
-                method:'POST',
-                body:formData
-            });
-            if (response.ok){
-                
-                let result=await response.json();
-                alert(result.message);
-                form.reset();
-                form.classList.add('_sending');
-            }else{
-                alert("Ошибка");
-                form.classList.add('_sending');
+        let status = document.getElementById("status");
+        let slapforms = new Slapform();
+        slapforms.submit({
+            form: "hSfvks6qU",
+            data: {
+                fio: document.getElementById("fio").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                organization: document.getElementById("organization").value,
+                message: document.getElementById("message").value,
+                oznakomlen: document.getElementById("check_mark").value
             }
+        }).then(function () {
+            status.style.color = "rgba(122, 77, 167, 0.975)";
+            status.innerHTML = "Отправлено";
 
-        }else{
-            alert ('Не все поля заполнены');
+            let inps = document.querySelectorAll(".form_input, #check_mark");
+            for (let i = 0; i < inps.length; i++) {
+                localStorage.removeItem(inps[i].id);
+                inps[i].value = "";
+            }
+            document.getElementById("check_mark").checked = false;
+        }).catch(function () {
+            status.style.color = "red";
+            status.innerHTML = "Данные не отправлены";
+        });
+    });
+
+    //save localStorage
+    function editLocStor(el, val) {
+        localStorage.setItem(el, val);
+        if (val === "") {
+            localStorage.removeItem(el);
         }
     }
 
-    function formValidator(form){
-        let error=0;
-        let formReq=document.querySelectorAll('._req, #tel');
+    $(".form_input").on("change", function () {
+        editLocStor(this.id, this.value);
+    });
 
-        for(let index=0; index<formReq.length; index++){
-            let input = formReq[index];
-            formRemoveError(input);
-            if(input.classList.contains('_email')){
-                if(!emailTest(input)){
-                    formAddError(input);
-                    error++;
-                }
+    $(".form_input").on("input", function () {
+        editLocStor(this.id, this.value);
+    });
 
-            } else if(input.id == "tel"){
-                if(!phoneTest(input)){
-                    formAddError(input);
-                    error++;
-                }
+    $("#oznakomlen").on("click", function () {
+        editLocStor(this.id, this.checked);
+    });
 
-            } else if(input.getAttribute("type")=== "checkbox" && input.checked===false){
-                formAddError(input);
-                    error++;
-            } else{
-                if(input.value===''){
-                    formAddError(input);
-                    error++;
-                }
-            }
+    let inps = document.querySelectorAll(".form_input");
+    for (let i = 0; i < inps.length; i++) {
+        let val = localStorage.getItem(inps[i].id);
+        if (val != null) {
+            inps[i].value = val;
         }
-        return error;
     }
+};
 
-    function formAddError(input){
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
-    }
-    function formRemoveError(input){
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
-    }
-    function emailTest(input){
-        return /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(input.value);
-    }
-    function phoneTest(input){
-        return /^[\d\+][\d\(\)\ -]{4,14}\d$/.test(input.value);
-    }
-});
-
-
+//click back
+window.onpopstate = function (event) {
+    modalCh(event.state && event.state.modal === "open");
+};
