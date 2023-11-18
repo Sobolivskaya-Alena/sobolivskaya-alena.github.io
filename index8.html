@@ -1,111 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Задание №8</title>
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <link href="style8.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style8.css" />
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slapform@latest/dist/index.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Задание 8</title>
   </head>
   <body>
-    <button id="myBtn">Открыть окно</button>
+    <button
+      type="button"
+      id="open-btn"
+      class="btn btn-primary main_but"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Открыть
+    </button>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Форма обратной связи</h2>
-          <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-          <div class="form">
-            <form id="form" class="form_body">
-              <div>
-                <div class="form_item mt-4">
-                  <label for="Name" class="form_label">ФИО</label> <br />
-                  <input
-                    type="text"
-                    id="forName"
-                    class="form_input _req"
-                    required
-                  />
-                </div>
-
-                <div class="form_item">
-                  <br />
-                  <label for="Email" class="form_label">E-mail</label><br />
-                  <input
-                    type="text"
-                    id="forEmail"
-                    class="form_input _req _email"
-                    required
-                  />
-                </div>
-
-                <div class="form_item">
-                  <br />
-                  <label>
-                    Tелефон<br />
-                  </label>
-                    <input
-                      class="form_input"
-                      type="tel"
-                      list="tel-list"
-                      id="tel"
-                      placeholder="+7 (918) 123-45-67"
-                    />
-                </div>
-
-                <div class="select mt-4">
-                  <br />
-                  <label class="form_label">
-                    <select name="format" id="format" class="select">
-                      <option selected disabled>Организация</option>
-                      <option value="Значение1">Организация №1</option>
-                      <option value="Значение2">Организация №2</option>
-                      <option value="Значение3">Организация №3</option>
-                      <option value="Значение4">Организация №4</option>
-                      <option value="Значение5">Организация №5</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div class="form_item mb-3">
-                  <br />
-                  <label for="Message" class="form_label">Сообщение</label
-                  ><br />
-                  <textarea
-                    name="message"
-                    id="forMessage"
-                    class="form_input"
-                    required
-                  ></textarea>
-                </div>
-
-                <div class="form_item">
-                  <div class="checkbox">
-                    <input
-                      type="checkbox"
-                      id="check_mark"
-                      name="check_mark"
-                      class="checkbox_input _req"
-                      checked
-                    />
-                    <label for="check_mark" class="checkbox_label">
-                      <span>Согласие на обработку персональных данных.</span>
-                    </label>
-                  </div>
-                </div>
-
-                <br />
-                <button type="submit" class="form_button">Отправить</button>
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Форма обратной связи</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              method="POST"
+              action="https://api.slapform.com/hSfvks6qU"
+              id="main"
+            >
+              <h4 id="status"></h4>
+              <div class="m-3">
+                <input
+                  type="text"
+                  name="fio"
+                  id="fio"
+                  class="form_input"
+                  placeholder="ФИО"
+                  required
+                />
               </div>
+              <div class="m-3">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form_input"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="m-3">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  class="form_input"
+                  placeholder="Телефон"
+                  required
+                />
+              </div>
+              <div class="m-3">
+                <input
+                  type="text"
+                  name="organization"
+                  id="organization"
+                  class="form_input"
+                  placeholder="Организация"
+                  required
+                />
+              </div>
+              <div class="m-3">
+                <textarea
+                  name="message"
+                  id="message"
+                  class="form_input"
+                  placeholder="Сообщение"
+                ></textarea>
+              </div>
+
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  name="check_mark"
+                  id="check_mark"
+                  class="checkbox_input"
+                  checked
+                />
+                <label class="checkbox_label">
+                  <span> Согласие на обработку персональных данных</span>
+                </label>
+              </div>
+              <button id="send" class="btn">Отправить</button>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <script src="script8.js"></script>
-    <script src="script8mob.js"></script>
+
+    <script src="index8.js" defer></script>
   </body>
 </html>
