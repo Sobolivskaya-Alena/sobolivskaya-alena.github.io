@@ -1,3 +1,9 @@
+/*jslint browser: true */
+/*jslint single: true */
+/*jslint unordered: true */
+/*jslint this: true */
+/*global $, jQuery, history, Slapform */
+
 function homeURL() {
     history.pushState({modal: "close"}, "ModalOut", "./index8.html");
 }
@@ -35,7 +41,6 @@ window.onload = function (event) {
     document.querySelector(".close").addEventListener("click", function () {
         homeURL();
     });
-
 
     let slapformMain = document.getElementById("main");
     slapformMain.addEventListener("submit", function (e) {
@@ -96,7 +101,6 @@ window.onload = function (event) {
         }
     }
 };
-
 
 window.onpopstate = function (event) {
     modalCh(event.state && event.state.modal === "open");
