@@ -1,9 +1,3 @@
-/*jslint browser: true */
-/*jslint single: true */
-/*jslint unordered: true */
-/*jslint this: true */
-/*global $, jQuery, history, Slapform */
-
 function homeURL() {
     history.pushState({modal: "close"}, "ModalOut", "./index8.html");
 }
