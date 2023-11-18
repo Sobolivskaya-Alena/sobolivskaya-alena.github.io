@@ -8,7 +8,6 @@ function homeURL() {
     history.pushState({modal: "close"}, "ModalOut", "./index8.html");
 }
 
-//automatic open or close modal
 function modalCh(event) {
     if (event) {
         document.querySelector(".main_but").click();
@@ -22,7 +21,6 @@ window.onload = function (event) {
     let stateStatus = event.currentTarget.history.state;
     modalCh(stateStatus && stateStatus.modal === "open");
 
-    //using history
     document.querySelector(".main_but").addEventListener("click", function () {
         history.pushState({modal: "open"}, "ModalIn", "?form=true");
     });
@@ -44,7 +42,7 @@ window.onload = function (event) {
         homeURL();
     });
 
-    //slapform (send data)
+
     let slapformMain = document.getElementById("main");
     slapformMain.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -77,7 +75,6 @@ window.onload = function (event) {
         });
     });
 
-    //save localStorage
     function editLocStor(el, val) {
         localStorage.setItem(el, val);
         if (val === "") {
@@ -106,7 +103,7 @@ window.onload = function (event) {
     }
 };
 
-//click back
+
 window.onpopstate = function (event) {
     modalCh(event.state && event.state.modal === "open");
 };
